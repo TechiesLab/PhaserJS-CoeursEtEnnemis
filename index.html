@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PhaserJS #6</title>
+  <link rel="shortcut icon" type="image/png" href="images/ico_full.png"/>
+  <link rel="stylesheet" href="stylesheet/prism.css">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+  <!-- Introduction -->
+  <div class="banner" style="display: block !important; background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://d2skuhm0vrry40.cloudfront.net/2018/articles/2018-08-29-13-52/nintendo-takes-down-11-year-old-pokemon-fangame-kit-1535547168922.jpg/EG11/thumbnail/750x422/format/jpg/quality/60');">
+    <div id="class-languages">
+      <i class="fab fa-html5 mr-1" style="color: #f84820"></i>
+      <i class="fab fa-css3-alt mr-1" style="color: #1970b5"></i>
+      <i class="fab fa-js-square mr-1" style="color: #FFE01B"></i>
+    </div>
+    <div class="container text-center">
+      <div class="main">
+        <img src="images/logo.png" alt="">
+        <div class="class-title text-center">
+          <h1>PhaserJS<br> Fiche 6</h1>
+        </div>
+      </div>
+      <p>Durant cette session, on va plus se concentrer sur la création de jeux vidéos dans le language JavaScript. Pour ce faire, on se servira de la librarie <b>Phaser</b>.</p>
+      <a class="btn btn-primary tl-button" href="#challenge" role="button">Commencer !</a>
+    </div>
+  </div>
+
+  <div class="container" id="challenge">
+
+    <div class="accordion" id="accordionExample">
+
+      <!-- Étape 1 -->
+      <div class="card">
+        <div class="card-header" id="heading1">
+          <h2 class="mb-0">
+            <button class="btn btn-link done task" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+              Étape 1 - Défis à compléter avant
+            </button>
+          </h2>
+        </div>
+        <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Avant d'entamer ce défi, assure toi d'avoir déjà fait ceux ci:</p>
+            <ul>
+              <li><a href="https://techieslab.github.io/PhaserJS-Introduction/">PhaserJS - Personnage</a></li>
+              <li><a href="https://techieslab.github.io/PhaserJS-Platforms/">PhaserJS - Plateformes</a></li>
+              <li><a href="https://techieslab.github.io/PhaserJS-GagnerPerdre/">PhaserJS - Gagner et Perdre</a></li>
+              <li><a href="https://techieslab.github.io/PhaserJS-MapFacile/">PhaserJS - Map Facile</a></li>
+              <li><a href="https://techieslab.github.io/PhaserJS-PointsEtVies/">PhaserJS - Points et Vies</a></li>
+            </ul>
+            <p>Ensuite, assure-toi de te munir d'une grande motivation et soif d'apprendre!</p>
+            <p>Aussi, assure-toi que tu sois bien connecté à ton compte <a href="https://repl.it">Repl.It</a>, et que tu aies ton projet de la fois passée.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="card">
+        <div class="card-header" id="heading2">
+          <h2 class="mb-0">
+            <button class="btn btn-link task" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              Étape 2 - Des coeurs
+            </button>
+          </h2>
+        </div>
+        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Souviens-toi que un des challenges la dernière fois était de montrer le nombre de vies en coeurs. C'était en fait un challenge plutôt compliqué, donc on va le résoudre ensemble aujourd'hui!</p>
+
+            <p>La première étape, comme toujours, sera de dessiner un coeur en pixelart, sur ton site de pixelart préferé. Moi je vais utiliser <a href="https://www.pixilart.com">pixilart.com</a> comme d'habitude. Voici mon joli coeur:</p>
+
+            <img src="images/heart.png" width="10%">
+
+            <p>Importe le dans ton projet et <code>load</code> le, comme pour tous les autres dessins.</p>
+
+            <p>On va maintenant devoir dessiner nos coeurs. Comme ceux ci doivent juste être créés et pas changer, on va le faire dans la fonction <code>create</code></p>
+
+            <p>Dessinons d'abord 1 coeurs. On veut le placer dans le coin en haut à droite, et faire en sorte qu'il ne bouge pas... </p>
+
+            <p>Pour qu'il ne bouge pas, on connaît déjà la commande! Tu t'en souviens?</p>
+
+            <p>Et pour faire apparaître un objet sur la map, on peut juste faire <code>this.physics.add.sprite</code> avec les coordonnées et quel sprite on veut ajouter.</p>
+
+            <p>Ensemble ça donne donc ceci. Iil te faudra tout de même changer les coordonnées.</p>
+
+            <pre><code class="language-js">
+              this.physics.add.sprite(460, 30, "heart").setScrollFactor(0);
+            </code></pre>
+
+            <p><b>Challenge:</b> Essaie de faire apparaître 3 coeurs côte à côte! </p>
+
+            <p>On veut aussi pouvoir les effacer ces coeurs. Pour ce faire, on doit leur donner un nom.</p>
+
+            <pre><code class="language-js">
+              this.live1 = this.physics.add.sprite(460, 30, "heart").setScrollFactor(0);
+            </code></pre>
+
+            <p>Donne leur tous un nom pour qu'on puisse les différencier.</p>
+
+            <p>Ensuite, juste après avoir créé ces coeurs, on va créer une liste des coeurs! Cette liste doit contenir les coeurs dans l'ordre, tel que le premier coeur à enlever est tout à droite.</p>
+
+            <pre><code class="language-js">
+              this.liveList = [this.live1, this.live2, this.live3];
+            </code></pre>
+
+            <p>Lorsque tu perds une vie, on veut afficher une vie en moins. Facile! On veut enlever un coeur de notre <code>this.liveList</code>, et le détruire.</p>
+
+            <p>Pour enlever le dernier coeur de la liste, on va utiliser <code>.pop()</code>. Ceci va enlever uniquement le dernier élément de la liste et rien de plus.</p>
+
+            <p>Ensuite, on veut le <code>.destroy()</code> pour détruire ce coeur.</p>
+
+            <pre><code class="language-js">
+              this.liveList.pop().destroy();
+            </code></pre>
+
+            <p>Si tu n'as pas encore codé la partie "Perdre", sois sûr de retourner à la fiche précédente et de le faire! Sinon ton jeu va crasher lorsque tu veux perdre une vie que tu n'as pas!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="card">
+        <div class="card-header" id="heading3">
+          <h2 class="mb-0">
+            <button class="btn btn-link task" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              Étape 3 - Des ennemis
+            </button>
+          </h2>
+        </div>
+        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>On a déjà ajouté des piques un peu partout dans notre jeu. Mais si on ajoutait des piques qui bougent? Ou encore mieux, des <b>ennemis</b>?</p>
+
+            <p>Tout d'abord, décide toi si tu veux utiliser des piques qui bougent ou si tu veux dessiner un nouveau dessin pour tes ennemis. Si tu veux en dessiner un autre, rend toi sur <a href="https://www.pixilart.com">pixilart.com</a> ou ton site de pixelart préferé.</p>
+
+            <p>Tu dois alors <code>load</code> ton nouveau dessin dans ton jeu, comme on le fait avec tous les autres dessins dans la fonction <code>preload</code>.</p>
+
+            <p>Ensuite, fait apparaître ton ennemi quelque part sur l'écran. Tu peux le faire dans la boucle <code>for</code> (Et donc placer un caractère sur ta map). N'oublie pas de lui donner un nom quand tu le fais apparaître.</p>
+
+            <pre><code class="language-js">
+              } else if (c === 'e') {
+                this.ennemy = this.physics.add.sprite(X, Y, "ennemy");
+              }
+            </code></pre>
+
+            <p>Maintenant, on va devoir se décider sur une direction initiale de notre ennemi. Dans la boucle <code>create</code>, juste après avoir fait apparaître ton ennemi, initialise la direction!</p>
+
+            <pre><code class="language-js">
+              this.direction = "right";
+            </code></pre>
+
+            <p>Ceci veut dire qu'il bougera à droite.</p>
+
+            <p>Dans la fonction <code>update</code>, on va alors le faire bouger.</p>
+
+            <p>Pour le faire toujours bouger, on peut simplement faire ceci:</p>
+
+            <pre><code class="language-js">
+              this.ennemy.x += 1;
+            </code></pre>
+
+            <p>Maintenant il bougera toujours à droite.</p>
+
+            <p><b>CHALLENGE: </b>Fait bouger l'ennemi toujours à gauche! Quand c'est réussi, remets le à toujours bouger à droite!</p>
+
+            <p>Mais on ne veut pas qu'il bouge toujours à droite. On veut qu'il bouge un peu à droite, puis un peu à gauche, etc.</p>
+
+            <p>Pour savoir combien on veut qu'il bouge à droite, fais <b>logguer</b> l'ennemi ses coordonnées.</p>
+
+            <p>Juste après avoir ajouté 1 aux <code>x</code> de l'ennemi, ajoute ceci</p>
+
+            <pre><code class="language-js">
+              console.log(this.ennemy.x);
+            </code></pre>
+
+            <p>Lorsque l'ennemi atteint l'endroit où tu veux qu'il se retourne, prend note du numéro dans la console. Chez moi, c'est 200.</p>
+
+            <p>Donc, lorsqu'il atteint 200, on va changer de direction!</p>
+
+            <pre><code class="language-js">
+              if(this.ennemy.x > 200) {
+                this.direction = "left";
+              }
+            </code></pre>
+
+            <p>Pour l'instant cela ne change rien. Mais c'est parce que l'ennemi bouge juste à droite, sans jamais regarder la direction. Changeons cela!</p>
+
+            <pre><code class="language-js">
+              if(direction === "right") {
+                // Bouger à droite
+              } else {
+                // Bouger à gauche
+              }
+            </code></pre>
+
+            <p>Maintenant, lorsque l'ennemi arrive au point où il doit se retourner, il va se retourner!</p>
+
+            <p>Finalement, il nous faut juste faire en sorte qu'il se reretourner lorsqu'il arrive trop à gauche. Prend note de l'X où tu veux qu'il se retourner à nouveau, et fait le tourner</p>
+
+            <pre><code class="language-js">
+              if(this.ennemy.x < 40) {
+                this.direction = "right";
+              }
+            </code></pre>
+
+            <p>Voilà! Ton ennemi bouge de droite à gauche en boucle.</p>
+
+            <p>Il ne manque qu'une chose! Pour l'instant, l'ennemi ne fait rien quand on le touche...</p>
+
+            <p>Te souviens-tu de comment on faisait pour les piques?</p>
+
+            <pre><code class="language-js">
+              this.physics.add.overlap(this.player, this.spikes, function(player, spike) {
+                // Ce qui se passe lorsqu'on touche une pique
+              }, null, this);
+            </code></pre>
+
+            <p>Crois-tu que tu sais l'adapter aux ennemis? Il faut juste changer 2 petits trucs ;-)</p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div> 
+  </div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://techieslab.be/"><i class="fas fa-globe"></i></i></a>
+    <a href="https://www.facebook.com/TechiesLabBrussels"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/company/techies-lab/"><i class="fab fa-linkedin"></i></a>
+    <a href="https://twitter.com/TechiesLab"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <a href="https://techieslab.be" rel="noopener noreferrer" target="_blank" class="alert-link copyright">
+      <i class="far fa-copyright"></i> 2021 Techies Lab ASBL. All rights reserved.
+    </a>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="javascript/prism.js"></script>
+</body>
+</html>
